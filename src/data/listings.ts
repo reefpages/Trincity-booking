@@ -1,0 +1,290 @@
+import { PricingModel, Listing } from '../types';
+
+export const LISTINGS: Listing[] = [
+  {
+    id: '1',
+    title: "Dining Hall Auditorium",
+    category: "Indoor Venues",
+    pricingModel: PricingModel.CAPACITY_TIER,
+    description: "The Dining Hall Auditorium is our premier venue for large-scale events, conferences, and performances.",
+    images: ["https://picsum.photos/seed/dining/1200/800"],
+    amenities: [
+      "Fully Air Conditioned", "Kitchen", "Male and Female Washrooms", "Security", "Cleaning", 
+      "Rectangular Tables", "Oval Tables", "Padded Chairs", "Stage", "Changerooms", "Car Park"
+    ],
+    pricingTiers: [
+      { minCapacity: 1, maxCapacity: 50, baseRate: 4000, vat: 500, subtotal: 4500, cott: 932.75, insurance: 795, cautionFee: 1000, total: 7227.75 },
+      { minCapacity: 51, maxCapacity: 100, baseRate: 6000, vat: 750, subtotal: 6750, cott: 932.75, insurance: 795, cautionFee: 1000, total: 9477.75 },
+      { minCapacity: 101, maxCapacity: 150, baseRate: 8000, vat: 1000, subtotal: 9000, cott: 932.75, insurance: 795, cautionFee: 1000, total: 11727.75 },
+      { minCapacity: 151, maxCapacity: 200, baseRate: 12000, vat: 1500, subtotal: 13500, cott: 932.75, insurance: 795, cautionFee: 1000, total: 16227.75 },
+      { minCapacity: 201, maxCapacity: 250, baseRate: 14000, vat: 1750, subtotal: 15750, cott: 1404.13, insurance: 795, cautionFee: 1000, total: 18949.15 },
+      { minCapacity: 251, maxCapacity: 300, baseRate: 16000, vat: 2000, subtotal: 18000, cott: 1404.13, insurance: 1060, cautionFee: 1000, total: 21464.15 },
+      { minCapacity: 301, maxCapacity: 350, baseRate: 18000, vat: 2250, subtotal: 20250, cott: 1404.13, insurance: 1060, cautionFee: 1000, total: 23714.15 },
+      { minCapacity: 351, maxCapacity: 400, baseRate: 20000, vat: 2500, subtotal: 22500, cott: 1404.13, insurance: 1060, cautionFee: 1000, total: 25964.15 }
+    ]
+  },
+  {
+    id: '2',
+    title: "Concerts and Theatre Auditorium",
+    category: "Indoor Venues",
+    pricingModel: PricingModel.CAPACITY_TIER,
+    description: "A professional space for theatre productions and concerts.",
+    images: ["https://picsum.photos/seed/theatre/1200/800"],
+    amenities: [
+      "Fully Air Conditioned", "Kitchen", "Male and Female Washrooms", "Padded Chairs", 
+      "Stage", "Changerooms", "Car Park", "Security", "Cleaning"
+    ],
+    pricingTiers: [
+      { minCapacity: 100, maxCapacity: 200, baseRate: 5000, vat: 625, subtotal: 5625, cott: 932.75, insurance: 397.50, cautionFee: 1000, total: 7955.25 },
+      { minCapacity: 201, maxCapacity: 250, baseRate: 5500, vat: 687.50, subtotal: 6187.50, cott: 1404.13, insurance: 397.50, cautionFee: 1000, total: 8989.15 },
+      { minCapacity: 251, maxCapacity: 500, baseRate: 6000, vat: 750, subtotal: 6750, cott: 1404.13, insurance: 530, cautionFee: 1000, total: 9684.15 },
+      { minCapacity: 501, maxCapacity: 750, baseRate: 7000, vat: 875, subtotal: 7875, cott: 2071.25, insurance: 795, cautionFee: 1000, total: 11741.25 },
+      { minCapacity: 751, maxCapacity: 900, baseRate: 8000, vat: 1000, subtotal: 9000, cott: 2071.25, insurance: 1060, cautionFee: 1000, total: 13131.25 }
+    ]
+  },
+  {
+    id: '3',
+    title: "Cafeteria",
+    category: "Indoor Venues",
+    pricingModel: PricingModel.CAPACITY_TIER,
+    description: "Versatile space for informal gatherings and events.",
+    images: ["https://picsum.photos/seed/cafeteria/1200/800"],
+    amenities: ["Fully Air Conditioned", "Male and Female Washrooms", "Security", "Rectangular Tables", "Padded Chairs", "Car Park"],
+    cleaningFee: 750,
+    pricingTiers: [
+      { minCapacity: 1, maxCapacity: 100, baseRate: 2000, vat: 343.75, subtotal: 2750, cott: 932.75, insurance: 795, cautionFee: 1000, total: 5821.50 },
+      { minCapacity: 101, maxCapacity: 200, baseRate: 4000, vat: 593.75, subtotal: 4750, cott: 932.75, insurance: 795, cautionFee: 1000, total: 8071.50 },
+      { minCapacity: 201, maxCapacity: 250, baseRate: 6000, vat: 843.75, subtotal: 6750, cott: 1404.13, insurance: 795, cautionFee: 1000, total: 10792.88 }
+    ]
+  },
+  {
+    id: '4',
+    title: "Non Air Condition Classroom",
+    category: "Classrooms and Labs",
+    pricingModel: PricingModel.DURATION,
+    description: "Standard classroom for academic use.",
+    images: ["https://picsum.photos/seed/classroom/1200/800"],
+    amenities: ["Whiteboard", "Desks", "Chairs"],
+    rates: { hourly: 75, daily: 600, weekly: 2814, monthly: 11550 },
+    insurance: 106
+  },
+  {
+    id: '5',
+    title: "Air Condition Classroom",
+    category: "Classrooms and Labs",
+    pricingModel: PricingModel.DURATION,
+    description: "Comfortable air-conditioned classroom.",
+    images: ["https://picsum.photos/seed/ac-classroom/1200/800"],
+    amenities: ["Air Conditioned", "Whiteboard", "Desks", "Chairs"],
+    rates: { hourly: 125, daily: 750, weekly: 4690, monthly: 19250 },
+    insurance: 106
+  },
+  {
+    id: '6',
+    title: "Computer Labs",
+    category: "Classrooms and Labs",
+    pricingModel: PricingModel.DURATION_PLUS_EXTRA,
+    description: "Equipped with modern computers and high-speed internet.",
+    images: ["https://picsum.photos/seed/lab/1200/800"],
+    amenities: ["Computers", "Internet", "Projector", "Air Conditioned"],
+    rates: { hourly: 200, daily: 1200, weekly: 7504, monthly: 30800 },
+    technicianFee: 400,
+    adminPercent: 10,
+    insurance: 106,
+    notes: ["on-call camp fee needs admin configurability"]
+  },
+  {
+    id: '7',
+    title: "Meeting Room",
+    category: "Special Rooms",
+    capacity: "12",
+    pricingModel: PricingModel.DURATION_MANDATORY,
+    description: "Small meeting room for team discussions.",
+    images: ["https://picsum.photos/seed/meeting/1200/800"],
+    amenities: ["Wifi", "Table", "Chairs"],
+    rates: { hourly: 175, daily: 1100 },
+    vatRate: 12.5,
+    cleaningFee: 500,
+    insurance: 106
+  },
+  {
+    id: '8',
+    title: "Conference Room",
+    category: "Special Rooms",
+    capacity: "40",
+    pricingModel: PricingModel.DURATION_MANDATORY,
+    description: "Large conference room with full AV equipment.",
+    images: ["https://picsum.photos/seed/conference/1200/800"],
+    amenities: ["Fully Air Conditioned", "Male and Female Washroom", "Padded Chairs", "Executive Tables", "Lectern", "Projector", "Screen", "Wifi", "Car Park"],
+    rates: { hourly: 225, daily: 2000 },
+    vatRate: 12.5,
+    cleaningFee: 750,
+    insurance: 106
+  },
+  {
+    id: '9',
+    title: "Chapel",
+    category: "Special Rooms",
+    capacity: "225",
+    pricingModel: PricingModel.DURATION_MANDATORY,
+    description: "A serene space for religious and formal events.",
+    images: ["https://picsum.photos/seed/chapel/1200/800"],
+    amenities: ["Pews", "Altar", "Sound System"],
+    rates: { hourly: 300 },
+    cleaningFee: 1500,
+    insurance: 397.50,
+    notes: ["chapel pricing needs confirmation"]
+  },
+  {
+    id: '10',
+    title: "Foyer",
+    category: "Special Rooms",
+    capacity: { min: 75, max: 100 },
+    pricingModel: PricingModel.DURATION_MANDATORY,
+    description: "Open space for receptions and networking.",
+    images: ["https://picsum.photos/seed/foyer/1200/800"],
+    amenities: ["Open Space", "Lighting"],
+    rates: { hourly: 275, daily: 3000 },
+    vatRate: 12.5,
+    cleaningFee: 500,
+    insurance: 106
+  },
+  {
+    id: '11',
+    title: "Music Room",
+    category: "Special Rooms",
+    capacity: "100",
+    pricingModel: PricingModel.FIXED_CAPACITY,
+    description: "Acoustically treated room for music practice and events.",
+    images: ["https://picsum.photos/seed/music/1200/800"],
+    amenities: ["Fully Air Conditioned", "Male and Female Washrooms", "Rectangular Tables", "Oval Tables", "Padded Chairs", "Car Park"],
+    rates: { daily: 2000 },
+    cleaningFee: 750,
+    vatRate: 12.5,
+    cott: 932.75,
+    insurance: 397.50,
+    cautionFee: 1000
+  },
+  {
+    id: '12',
+    title: "Court Yard",
+    category: "Outdoor Listings",
+    pricingModel: PricingModel.HYBRID_RULE,
+    description: "Large outdoor courtyard for festivals and family days.",
+    images: ["https://picsum.photos/seed/courtyard/1200/800"],
+    amenities: ["Outdoor Space", "Lighting"],
+    rates: { hourly: 700, daily: 5000 },
+    hourlyLimit: 4,
+    vatRate: 12.5,
+    insurance: 795,
+    cautionFee: 1000,
+    notes: ["any usage exceeding 4 hours must be charged at full day rate"]
+  },
+  {
+    id: '13',
+    title: "Outdoor Gym",
+    category: "Outdoor Listings",
+    pricingModel: PricingModel.SPORTS_FACILITY,
+    description: "Outdoor fitness facility.",
+    images: ["https://picsum.photos/seed/gym/1200/800"],
+    amenities: ["Gym Equipment", "Outdoor"],
+    rates: { hourly: 30, daily: 250 },
+    vatRate: 12.5,
+    insurance: 106
+  },
+  {
+    id: '14',
+    title: "Outdoor Courts",
+    category: "Outdoor Listings",
+    pricingModel: PricingModel.SPORTS_FACILITY,
+    description: "Multi-purpose outdoor courts for tennis and basketball.",
+    images: ["https://picsum.photos/seed/courts/1200/800"],
+    amenities: ["Tennis Court", "Basketball Court"],
+    rates: { hourly: 50, daily: 250 },
+    vatRate: 12.5,
+    insurance: 106,
+    notes: ["allow recurring plan support if enabled by admin"]
+  },
+  {
+    id: '15',
+    title: "Football Field",
+    category: "Outdoor Listings",
+    pricingModel: PricingModel.SPORTS_FACILITY,
+    description: "Full-size football field for matches and training.",
+    images: ["https://picsum.photos/seed/football/1200/800"],
+    amenities: ["Full-size Field", "Goal Posts", "Seating"],
+    rates: { hourly: 300, daily: 4500 },
+    vatRate: 12.5,
+    insurance: 106,
+    cautionFee: 1000,
+    attendanceFees: [
+      { range: "100-200", fee: 1500 },
+      { range: "201-500", fee: 2000 },
+      { range: "501+", fee: 3000 }
+    ]
+  },
+  {
+    id: '16',
+    title: "Filming and Photography",
+    category: "Services",
+    pricingModel: PricingModel.GLOBAL_SERVICE,
+    description: "Professional filming and photography services on campus.",
+    images: ["https://picsum.photos/seed/filming/1200/800"],
+    amenities: ["Any Location", "Professional Crew"],
+    rates: { hourly: 250 },
+    vatRate: 12.5,
+    insurance: 106,
+    calendarMode: 'time_slot'
+  },
+  {
+    id: '17',
+    title: "Virtual Meetings and Events",
+    category: "Services",
+    pricingModel: PricingModel.GLOBAL_SERVICE,
+    description: "Host your virtual events with our professional setup.",
+    images: ["https://picsum.photos/seed/virtual/1200/800"],
+    amenities: ["Streaming Equipment", "IT Support"],
+    rates: { hourly: 500 },
+    vatRate: 12.5,
+    insurance: 106,
+    availabilityRule: "weekdays_only",
+    calendarMode: 'time_slot'
+  }
+];
+
+export const ADD_ONS = [
+  { id: '1', name: 'TV Screens', price: 500, unit: 'per_unit', category: 'Media Equipment' },
+  { id: '2', name: 'Projector', price: 1000, unit: 'fixed', category: 'Media Equipment' },
+  { id: '3', name: 'Lights for Weddings', price: 1000, unit: 'fixed', category: 'Media Equipment' },
+  { id: '4', name: 'Sound for Weddings', price: 2500, unit: 'fixed', category: 'Media Equipment' },
+  { id: '5', name: 'Theatre Productions', price: 3500, unit: 'fixed', category: 'Media Equipment' },
+  { id: '6', name: 'Light and Audio Operator', price: 1000, unit: 'fixed', category: 'Media Equipment' },
+  { id: '7', name: 'Audio System and Projector', price: 2000, unit: 'fixed', category: 'Media Equipment' },
+  { id: '8', name: 'Audio System', price: 2500, unit: 'fixed', category: 'Media Equipment' },
+  { id: '9', name: 'Oval Tables (Seats 8)', price: 20, unit: 'per_unit', category: 'Furnishings' },
+  { id: '10', name: 'Rectangular Tables (Seats 6)', price: 15, unit: 'per_unit', category: 'Furnishings' },
+  { id: '11', name: 'Chairs', price: 4, unit: 'per_unit', category: 'Furnishings' },
+  { id: '12', name: 'Rice and Boston Ferns', price: 35, unit: 'per_unit', category: 'Decor / Plants' },
+  { id: '13', name: 'Palms', price: 35, unit: 'per_unit', category: 'Decor / Plants' },
+  { id: '14', name: 'BAHSE/TCE Courtyard (Weddings)', price: 1500, unit: 'fixed', category: 'Special Add-ons' },
+  { id: '15', name: 'BAHSE/TCE Courtyard (Family Day)', price: 3000, unit: 'fixed', category: 'Special Add-ons' },
+];
+
+export const DISCOUNT_RULES = [
+  { id: '1', name: 'TRINCOL Directors', type: 'percentage', value: 30, roles: ['Director'] },
+  { id: '2', name: 'BAA / Trustees / BOD', type: 'percentage', value: 25, roles: ['Trustee', 'BOD'] },
+  { id: '3', name: 'TRINCOL Management', type: 'percentage', value: 25, roles: ['Management'] },
+  { id: '4', name: 'Senior Management BATCE', type: 'percentage', value: 20, roles: ['Senior Management'] },
+  { id: '5', name: 'TRINCOL and BATCE Staff', type: 'percentage', value: 20, roles: ['Staff'] },
+  { id: '6', name: 'Cheryl F. Greaves', type: 'percentage', value: 40, roles: ['Cheryl F. Greaves'] },
+  { id: '7', name: 'Schools (Weekdays)', type: 'percentage', value: 50, roles: ['School'], conditions: 'weekdays_only, school_term_only' },
+  { id: '8', name: 'NGOs / Charitable', type: 'percentage', value: 15, roles: ['NGO'] },
+  { id: '9', name: 'Loyalty (3 Years)', type: 'percentage', value: 10, conditions: 'loyalty_3_years' },
+  { id: '10', name: 'Loyalty (5 Years)', type: 'percentage', value: 15, conditions: 'loyalty_5_years' },
+  { id: '11', name: 'Loyalty (10 Years)', type: 'percentage', value: 20, conditions: 'loyalty_10_years' },
+  { id: '12', name: 'BATCE Alumni / PSG', type: 'percentage', value: 20, roles: ['Alumni', 'PSG'] },
+  { id: '13', name: 'BATCE Alumni / PSG (Fundraising)', type: 'percentage', value: 50, roles: ['Alumni', 'PSG'], conditions: 'fundraising' },
+  { id: '14', name: 'Staff Weddings', type: 'fixed_override', value: 5000, roles: ['Staff'], conditions: 'wedding' },
+  { id: '15', name: '1st Time Client (GM)', type: 'percentage', value: 20, requiresApproval: true },
+  { id: '16', name: '1st Time Client (FM/BC)', type: 'percentage', value: 10, requiresApproval: true },
+];
